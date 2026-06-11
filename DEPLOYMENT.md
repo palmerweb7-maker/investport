@@ -73,7 +73,7 @@ You can also point Netlify at `Inestment Options`; the root `netlify.toml` sets 
 Use:
 
 ```bash
-npm run build
+npm run build:netlify
 ```
 
 as the build command, and:
@@ -93,6 +93,17 @@ to = "https://YOUR-RENDER-SERVICE.onrender.com/api/:splat"
 Replace `YOUR-RENDER-SERVICE` with the actual Render service URL.
 
 If Netlify reads the root `netlify.toml`, update that file too.
+
+Optional: instead of relying on the Netlify `/api` redirect, set this Netlify environment variable:
+
+```text
+INVESTMENT_API_URL=https://YOUR-RENDER-SERVICE.onrender.com/api
+```
+
+The Netlify build writes this into `public/runtime-config.js` before building. Angular also has standard environment files at:
+
+- `Frontend/src/environments/environment.ts`
+- `Frontend/src/environments/environment.prod.ts`
 
 ## 4. Final URL Wiring
 

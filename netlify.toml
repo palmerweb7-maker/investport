@@ -1,6 +1,6 @@
 [build]
   base = "Frontend"
-  command = "npm run build"
+  command = "npm run build:netlify"
   publish = "dist/Frontend/browser"
 
 [build.environment]
